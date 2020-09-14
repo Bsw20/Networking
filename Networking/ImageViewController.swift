@@ -2,8 +2,7 @@
 //  ImageViewController.swift
 //  Networking
 //
-//  Created by Alexey Efimov on 27.07.2018.
-//  Copyright © 2018 Alexey Efimov. All rights reserved.
+//  Created by Ярослав Карпунькин on 14.09.2020.
 //
 
 import UIKit
