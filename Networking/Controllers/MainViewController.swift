@@ -18,6 +18,7 @@ enum Actions: String, CaseIterable {
 
 class MainViewController: UICollectionViewController {
     private let url = "https://jsonplaceholder.typicode.com/posts"
+    private let uploadImageUrl = "https://api.imgur.com/3/image"
     let actions = Actions.allCases
     
     override func viewDidLoad() {
@@ -60,10 +61,9 @@ class MainViewController: UICollectionViewController {
             print("Post")
         case .ourCourses:
             performSegue(withIdentifier: "OurCourses", sender: self)
-        case .uploadImage:   
+        case .uploadImage:
             print("Upload Image")
-        default:
-            break
+            NetworkManager.uploadImage(url: uploadImageUrl)
         }
     }
 
