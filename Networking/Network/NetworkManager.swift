@@ -121,8 +121,6 @@ class NetworkManager {
                 }
             }
         }).resume()
-        
-        
     }
 
 }

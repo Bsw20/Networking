@@ -15,6 +15,7 @@ enum Actions: String, CaseIterable {
     case ourCourses = "Our Courses"
     case uploadImage = "Upload Image"
     case dowloadFile = "Download File"
+    case ourCoursesAlamofire = "Our Courses (Alamofire)"
     
 }
 
@@ -22,7 +23,7 @@ private let url = "https://jsonplaceholder.typicode.com/posts"
 private let uploadImageUrl = "https://api.imgur.com/3/image"
 
 class MainViewController: UICollectionViewController {
-    let actions = Actions.allCases
+    private let actions = Actions.allCases
     private var alert: UIAlertController!
     private let dataProvider = DataProvider()
     private var filePath: String?
@@ -127,9 +128,29 @@ class MainViewController: UICollectionViewController {
             print(action.rawValue)
             showAlert()
             dataProvider.startDownload()
+        case .ourCoursesAlamofire:
+            print(action.rawValue)
+            performSegue(withIdentifier: "OurCoursesWithAlomofire", sender: self)
             
         }
 
+    }
+    
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let coursesVC = segue.destination as? CoursesViewController else {return}
+        switch segue.identifier {
+        
+        case "OurCourses":
+            coursesVC.fetchData()
+        case "OurCoursesWithAlomofire":
+            print("Open Courses view controller")
+            coursesVC.fetchDataWithAlomofire()
+        default:
+            break
+        }
+        
     }
 
 }

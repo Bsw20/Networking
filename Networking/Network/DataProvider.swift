@@ -28,9 +28,7 @@ class DataProvider: NSObject {
             downloadTask.countOfBytesClientExpectsToSend = 512
             downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 1024
             downloadTask.resume()
-            
         }
-        
     }
     
     func stopDowload() {
@@ -70,8 +68,6 @@ extension DataProvider: URLSessionDownloadDelegate {
             self.onProgress?(progress)
         }
     }
-    
-    
 }
 
 extension DataProvider: URLSessionTaskDelegate {

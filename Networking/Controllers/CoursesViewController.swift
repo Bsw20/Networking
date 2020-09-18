@@ -17,7 +17,6 @@ class CoursesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
 
         
     }
@@ -32,6 +31,10 @@ class CoursesViewController: UIViewController {
         }
 
 
+    }
+    
+    func fetchDataWithAlomofire(){
+        AlomofireNetworkRequest.sendRequest(url: url)
     }
     private func configureCell(cell: TableViewCell, for indexPath: IndexPath){
         let course = courses[indexPath.row]
