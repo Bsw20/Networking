@@ -80,5 +80,9 @@ extension DataProvider: URLSessionTaskDelegate {
     func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
         // Ожидание соединения, обновление интерфейса и прочее
     }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
+        //did finish collecting metrics
+    }
 }
 
