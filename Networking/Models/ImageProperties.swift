@@ -3,7 +3,6 @@
 //  Networking
 //
 //  Created by Ярослав Карпунькин on 16.09.2020.
-//  Copyright © 2020 Alexey Efimov. All rights reserved.
 //
 
 import Foundation

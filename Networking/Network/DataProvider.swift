@@ -3,7 +3,6 @@
 //  Networking
 //
 //  Created by Ярослав Карпунькин on 17.09.2020.
-//  Copyright © 2020 Alexey Efimov. All rights reserved.
 //
 
 import UIKit
@@ -74,3 +73,12 @@ extension DataProvider: URLSessionDownloadDelegate {
     
     
 }
+
+extension DataProvider: URLSessionTaskDelegate {
+    
+    //восстановление соединения
+    func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
+        // Ожидание соединения, обновление интерфейса и прочее
+    }
+}
+
