@@ -34,8 +34,15 @@ class CoursesViewController: UIViewController {
     }
     
     func fetchDataWithAlomofire(){
-        AlomofireNetworkRequest.sendRequest(url: url)
+        AlomofireNetworkRequest.sendRequest(url: url) { (courses) in
+            self.courses = courses
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
+    
     private func configureCell(cell: TableViewCell, for indexPath: IndexPath){
         let course = courses[indexPath.row]
         cell.courseNameLabel.text = course.name
