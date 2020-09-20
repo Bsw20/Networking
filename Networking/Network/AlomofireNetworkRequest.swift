@@ -163,5 +163,30 @@ class AlomofireNetworkRequest {
         }
     }
     
+    static func uploadImage(url: String) {
+        guard let url = URL(string: url) else  { return }
+        
+        let image = UIImage(named: "UploadImage")!
+        let data = image.pngData()!
+        
+        let httpHeaders = ["Authorization" : "Client-ID c2b62e921cecfd2"]
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(data, withName: "image")
+        }, to: url, headers: HTTPHeaders(httpHeaders)).validate().responseJSON { (response) in
+            print("-------------------")
+            print(response)
+            switch response.result {
+            
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print("error")
+            }
+        }
+        
+        
+    }
+    
 
 }
