@@ -72,6 +72,9 @@
                         <segue destination="Okz-m4-eD1" kind="show" identifier="OurCourses" id="20d-n7-Jrr"/>
                         <segue destination="Okz-m4-eD1" kind="show" identifier="OurCoursesWithAlomofire" id="fn8-wl-qBk"/>
                         <segue destination="eEq-kV-HBK" kind="show" identifier="ResponseData" id="iUd-m1-4MH"/>
+                        <segue destination="eEq-kV-HBK" kind="show" identifier="LargeImage" id="imj-qf-dMa"/>
+                        <segue destination="Okz-m4-eD1" kind="show" identifier="PostRequest" id="oci-Cp-C61"/>
+                        <segue destination="Okz-m4-eD1" kind="show" identifier="PutRequest" id="Z6O-IC-wFi"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGR-zp-eCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,6 +95,17 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YlX-cb-SYq">
                                 <rect key="frame" x="177.5" y="345.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhX-wa-VyB">
+                                <rect key="frame" x="112" y="528" width="151" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUY-b2-AdL">
+                                <rect key="frame" x="112" y="461" width="151" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sDJ-Ie-o0x"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +121,9 @@
                     <navigationItem key="navigationItem" title="Image" id="tDy-0P-prn"/>
                     <connections>
                         <outlet property="activityIndicator" destination="YlX-cb-SYq" id="vaC-HA-64K"/>
+                        <outlet property="completedLabel" destination="EUY-b2-AdL" id="bd0-CK-Pga"/>
                         <outlet property="imageView" destination="PdE-uL-DIr" id="ECD-Xx-NIQ"/>
+                        <outlet property="progressView" destination="FhX-wa-VyB" id="4gj-oH-jQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cav-LT-BQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,8 +294,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fn8-wl-qBk"/>
-        <segue reference="iUd-m1-4MH"/>
+        <segue reference="Z6O-IC-wFi"/>
+        <segue reference="imj-qf-dMa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

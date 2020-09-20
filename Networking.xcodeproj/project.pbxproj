@@ -75,8 +75,8 @@
 		30267A68250FC52100415FA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A8255C8521410DFE0074F6D0 /* TableViewCell.swift */,
 				30267A63250FBFC900415FA3 /* CollectionViewCell.swift */,
+				A8255C8521410DFE0074F6D0 /* TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
